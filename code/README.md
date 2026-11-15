@@ -5,6 +5,10 @@ T2 TLS 1.3-over-TCP, T3 QUIC-strict metadata), five detectors, nine post-hoc / n
 fidelity and cost measurement, and the **budget-aware selective XAI trigger** evaluated in a
 trace-driven streaming replay.
 
+**Quick look:** open [`demo.ipynb`](demo.ipynb). It loads the data, shows what each visibility tier hides, loads the
+trained XGBoost detector, explains one alert with TreeSHAP and KernelSHAP, and shows the saved results of every
+experiment (outputs are already included, so it can be read without running anything).
+
 ## Layout
 
 ```

@@ -19,13 +19,13 @@ Most network traffic is now encrypted, so an intrusion detection system (IDS) on
 - **The selective trigger works within detection capacity:** explanation overhead 0.10–0.11 of detection time, every true alert explained within 1 s, and a 35 ms verdict delay during a port-scan flood (2.7 s for "explain every alert").
 - **Known-answer check:** TreeSHAP, KernelSHAP-500 and PartitionSHAP always find a planted cause; LIME often blames it when it played no role, and DeepSHAP never finds it.
 
-Full details are in the reports in [`docs/`](docs).
+Full details are in the reports in [`docs/`](docs). For a quick tour, open the demo notebook [`code/demo.ipynb`](code/demo.ipynb); its outputs are already included.
 
 ## Repository layout
 
 ```
-code/      Python package `xaiids` and numbered experiment scripts (see code/README.md)
-results/   all result files (CSV, JSON, attributions) used in the reports
+code/      Python package `xaiids`, numbered experiment scripts and demo.ipynb (see code/README.md)
+results/   all result files (CSV, JSON, attributions) used in the reports, plus the trained detector the demo loads
 figures/   all figures (PDF and PNG)
 report/    LaTeX source of the Phase 3 report
 docs/      PDF reports: Phase 1 literature review, Phase 2 methodology, Phase 3 implementation and evaluation
