@@ -1,0 +1,17 @@
+# Phase 3 experiment environment (CPU-only), exact versions used for every result in the report.
+# Install:  python -m pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+numpy==2.5.4
+pandas==3.1.1
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+xgboost==3.4.1
+shap==0.54.1
+lime==0.2.0.1
+torch==2.15.0
+captum==0.9.0
+interpret-core==0.7.8
+psutil==7.2.2
+pyarrow==26.0.1
+tqdm==4.70.1
+scikit-posthocs==0.17.1
