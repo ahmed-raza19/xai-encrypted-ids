@@ -1,0 +1,278 @@
+{
+ "hikari_BRUTEFORCE_HTTPS_2021-04-11.pcap": {
+  "packets": 622670,
+  "header_bytes_kept": 42361392,
+  "payload_bytes_removed": 659926422,
+  "size_full_mb": 679.2550640106201,
+  "size_stripped_mb": 49.900184631347656,
+  "nfstream_full_s": 83.26009228799376,
+  "nfstream_stripped_s": 8.739807619014755,
+  "packets_per_s_stripped": 71245.27531307309,
+  "flows_per_s_stripped": 2279.6840466662406,
+  "matched_flows": 19924,
+  "flows_full": 19924,
+  "flows_stripped": 19924,
+  "metadata_columns": 62,
+  "metadata_identical_share_min": 1.0,
+  "metadata_identical_share_mean": 1.0,
+  "least_identical": [
+   [
+    "bidirectional_last_seen_ms",
+    1.0
+   ],
+   [
+    "bidirectional_duration_ms",
+    1.0
+   ],
+   [
+    "bidirectional_packets",
+    1.0
+   ],
+   [
+    "bidirectional_bytes",
+    1.0
+   ],
+   [
+    "src2dst_first_seen_ms",
+    1.0
+   ]
+  ],
+  "dpi_fields": {
+   "application_name": {
+    "full": 0.6657799638626781,
+    "stripped": 0.3197149166833969
+   },
+   "application_category_name": {
+    "full": 1.0,
+    "stripped": 1.0
+   },
+   "requested_server_name": {
+    "full": 0.5301646255771933,
+    "stripped": 0.0
+   },
+   "client_fingerprint": {
+    "full": 0.20086328046576993,
+    "stripped": 0.0
+   },
+   "server_fingerprint": {
+    "full": 0.1879642642039751,
+    "stripped": 0.0
+   },
+   "user_agent": {
+    "full": 0.04602489459947802,
+    "stripped": 0.0
+   },
+   "content_type": {
+    "full": 0.04507127082915077,
+    "stripped": 0.0
+   }
+  }
+ },
+ "hikari_BRUTEFORCE_XML_2021-04-12.pcap": {
+  "packets": 290207,
+  "header_bytes_kept": 18567650,
+  "payload_bytes_removed": 247868085,
+  "size_full_mb": 258.5211477279663,
+  "size_stripped_mb": 22.13572120666504,
+  "nfstream_full_s": 20.705626398994355,
+  "nfstream_stripped_s": 4.666664982010843,
+  "packets_per_s_stripped": 62187.23673516225,
+  "flows_per_s_stripped": 3178.9297190148136,
+  "matched_flows": 14835,
+  "flows_full": 14835,
+  "flows_stripped": 14835,
+  "metadata_columns": 62,
+  "metadata_identical_share_min": 1.0,
+  "metadata_identical_share_mean": 1.0,
+  "least_identical": [
+   [
+    "bidirectional_last_seen_ms",
+    1.0
+   ],
+   [
+    "bidirectional_duration_ms",
+    1.0
+   ],
+   [
+    "bidirectional_packets",
+    1.0
+   ],
+   [
+    "bidirectional_bytes",
+    1.0
+   ],
+   [
+    "src2dst_first_seen_ms",
+    1.0
+   ]
+  ],
+  "dpi_fields": {
+   "application_name": {
+    "full": 0.5469497809234918,
+    "stripped": 0.24266936299292213
+   },
+   "application_category_name": {
+    "full": 1.0,
+    "stripped": 1.0
+   },
+   "requested_server_name": {
+    "full": 0.4050556117290192,
+    "stripped": 0.0
+   },
+   "client_fingerprint": {
+    "full": 0.17654196157735086,
+    "stripped": 0.0
+   },
+   "server_fingerprint": {
+    "full": 0.15962251432423324,
+    "stripped": 0.0
+   },
+   "user_agent": {
+    "full": 0.006066734074823054,
+    "stripped": 0.0
+   },
+   "content_type": {
+    "full": 0.0052578361981799795,
+    "stripped": 0.0
+   }
+  }
+ },
+ "hikari_BENIGN_Monday_2021-03-29.pcap": {
+  "packets": 344106,
+  "header_bytes_kept": 22242468,
+  "payload_bytes_removed": 0,
+  "size_full_mb": 26.46273422241211,
+  "size_stripped_mb": 26.46273422241211,
+  "nfstream_full_s": 4.875759523012675,
+  "nfstream_stripped_s": 4.223591001005843,
+  "packets_per_s_stripped": 81472.37739592956,
+  "flows_per_s_stripped": 2609.154152799265,
+  "matched_flows": 11020,
+  "flows_full": 11020,
+  "flows_stripped": 11020,
+  "metadata_columns": 62,
+  "metadata_identical_share_min": 1.0,
+  "metadata_identical_share_mean": 1.0,
+  "least_identical": [
+   [
+    "bidirectional_last_seen_ms",
+    1.0
+   ],
+   [
+    "bidirectional_duration_ms",
+    1.0
+   ],
+   [
+    "bidirectional_packets",
+    1.0
+   ],
+   [
+    "bidirectional_bytes",
+    1.0
+   ],
+   [
+    "src2dst_first_seen_ms",
+    1.0
+   ]
+  ],
+  "dpi_fields": {
+   "application_name": {
+    "full": 0.3704174228675136,
+    "stripped": 0.3704174228675136
+   },
+   "application_category_name": {
+    "full": 1.0,
+    "stripped": 1.0
+   },
+   "requested_server_name": {
+    "full": 0.0,
+    "stripped": 0.0
+   },
+   "client_fingerprint": {
+    "full": 0.0,
+    "stripped": 0.0
+   },
+   "server_fingerprint": {
+    "full": 0.0,
+    "stripped": 0.0
+   },
+   "user_agent": {
+    "full": 0.0,
+    "stripped": 0.0
+   },
+   "content_type": {
+    "full": 0.0,
+    "stripped": 0.0
+   }
+  }
+ },
+ "hikari_BENIGN_Tuesday_2021-03-30.pcap": {
+  "packets": 651203,
+  "header_bytes_kept": 43962978,
+  "payload_bytes_removed": 0,
+  "size_full_mb": 51.86295509338379,
+  "size_stripped_mb": 51.86295509338379,
+  "nfstream_full_s": 8.812381038995227,
+  "nfstream_stripped_s": 8.366647857998032,
+  "packets_per_s_stripped": 77833.20286122567,
+  "flows_per_s_stripped": 2142.6741395435715,
+  "matched_flows": 17927,
+  "flows_full": 17927,
+  "flows_stripped": 17927,
+  "metadata_columns": 62,
+  "metadata_identical_share_min": 1.0,
+  "metadata_identical_share_mean": 1.0,
+  "least_identical": [
+   [
+    "bidirectional_last_seen_ms",
+    1.0
+   ],
+   [
+    "bidirectional_duration_ms",
+    1.0
+   ],
+   [
+    "bidirectional_packets",
+    1.0
+   ],
+   [
+    "bidirectional_bytes",
+    1.0
+   ],
+   [
+    "src2dst_first_seen_ms",
+    1.0
+   ]
+  ],
+  "dpi_fields": {
+   "application_name": {
+    "full": 0.39950912032130304,
+    "stripped": 0.39950912032130304
+   },
+   "application_category_name": {
+    "full": 1.0,
+    "stripped": 1.0
+   },
+   "requested_server_name": {
+    "full": 0.0,
+    "stripped": 0.0
+   },
+   "client_fingerprint": {
+    "full": 0.0,
+    "stripped": 0.0
+   },
+   "server_fingerprint": {
+    "full": 0.0,
+    "stripped": 0.0
+   },
+   "user_agent": {
+    "full": 0.0,
+    "stripped": 0.0
+   },
+   "content_type": {
+    "full": 0.0,
+    "stripped": 0.0
+   }
+  }
+ }
+}

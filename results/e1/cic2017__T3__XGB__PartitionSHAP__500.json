@@ -1,0 +1,17 @@
+{
+ "dataset": "cic2017",
+ "tier": "T3",
+ "model": "XGB",
+ "method": "PartitionSHAP",
+ "budget": 500,
+ "features": 59,
+ "n": 100,
+ "build_s": 0.002757699927315116,
+ "mean_ms": 204.9254719959572,
+ "p50_ms": 201.55140000861138,
+ "p95_ms": 234.8908651387319,
+ "p99_ms": 250.03170209703967,
+ "max_ms": 253.39789991267025,
+ "throughput_per_s": 4.879822846130754,
+ "peak_mem_increment_mb": 1.1484375
+}

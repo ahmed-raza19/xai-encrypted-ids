@@ -1,0 +1,17 @@
+{
+ "dataset": "cic2017",
+ "tier": "T3",
+ "model": "MLP",
+ "method": "DeepSHAP",
+ "budget": null,
+ "features": 59,
+ "n": 200,
+ "build_s": 0.0040803998708724976,
+ "mean_ms": 1.4824444963596761,
+ "p50_ms": 1.4690000098198652,
+ "p95_ms": 1.6577148227952418,
+ "p99_ms": 1.7291190102696419,
+ "max_ms": 1.846299972385168,
+ "throughput_per_s": 674.561511379092,
+ "peak_mem_increment_mb": 4.7734375
+}

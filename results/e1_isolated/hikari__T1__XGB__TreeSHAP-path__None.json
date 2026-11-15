@@ -1,0 +1,17 @@
+{
+ "dataset": "hikari",
+ "tier": "T1",
+ "model": "XGB",
+ "method": "TreeSHAP-path",
+ "budget": null,
+ "features": 81,
+ "n": 200,
+ "build_s": 0.03626779979094863,
+ "mean_ms": 1.3669655111152679,
+ "p50_ms": 1.3504500966519117,
+ "p95_ms": 1.5170801314525304,
+ "p99_ms": 1.7037801654078064,
+ "max_ms": 1.8261999357491732,
+ "throughput_per_s": 731.5473520499642,
+ "peak_mem_increment_mb": 6.67578125
+}

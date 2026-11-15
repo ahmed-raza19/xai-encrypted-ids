@@ -1,0 +1,17 @@
+{
+ "dataset": "hikari",
+ "tier": "T3",
+ "model": "RF",
+ "method": "KernelSHAP",
+ "budget": 100,
+ "features": 60,
+ "n": 200,
+ "build_s": 0.006306800059974194,
+ "mean_ms": 37.922619498567656,
+ "p50_ms": 36.47424990776926,
+ "p95_ms": 49.035169952549026,
+ "p99_ms": 69.68691001413389,
+ "max_ms": 120.35840004682541,
+ "throughput_per_s": 26.36948642320898,
+ "peak_mem_increment_mb": 2.5078125
+}

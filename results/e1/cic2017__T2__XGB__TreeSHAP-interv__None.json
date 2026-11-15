@@ -1,0 +1,17 @@
+{
+ "dataset": "cic2017",
+ "tier": "T2",
+ "model": "XGB",
+ "method": "TreeSHAP-interv",
+ "budget": null,
+ "features": 79,
+ "n": 200,
+ "build_s": 0.0325029999949038,
+ "mean_ms": 4.96449300320819,
+ "p50_ms": 4.823100054636598,
+ "p95_ms": 6.125425035133957,
+ "p99_ms": 6.76519892644137,
+ "max_ms": 7.045999867841601,
+ "throughput_per_s": 201.43043798304737,
+ "peak_mem_increment_mb": 4.54296875
+}

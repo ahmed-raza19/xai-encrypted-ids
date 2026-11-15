@@ -1,0 +1,17 @@
+{
+ "dataset": "hikari",
+ "tier": "T3",
+ "model": "RF",
+ "method": "TreeSHAP-interv",
+ "budget": null,
+ "features": 60,
+ "n": 200,
+ "build_s": 0.01900149998255074,
+ "mean_ms": 36.8338130088523,
+ "p50_ms": 36.004000110551715,
+ "p95_ms": 48.85349000105634,
+ "p99_ms": 57.042936868965626,
+ "max_ms": 58.507899986580014,
+ "throughput_per_s": 27.148967709633244,
+ "peak_mem_increment_mb": 19.8359375
+}

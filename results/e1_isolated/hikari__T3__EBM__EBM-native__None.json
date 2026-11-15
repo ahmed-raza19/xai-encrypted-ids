@@ -1,0 +1,17 @@
+{
+ "dataset": "hikari",
+ "tier": "T3",
+ "model": "EBM",
+ "method": "EBM-native",
+ "budget": null,
+ "features": 60,
+ "n": 200,
+ "build_s": 8.500181138515472e-06,
+ "mean_ms": 0.30540850129909813,
+ "p50_ms": 0.2983000595122576,
+ "p95_ms": 0.3429051605053246,
+ "p99_ms": 0.3795889788307249,
+ "max_ms": 0.4368000663816929,
+ "throughput_per_s": 3274.3030915850704,
+ "peak_mem_increment_mb": 0.25
+}

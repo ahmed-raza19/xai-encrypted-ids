@@ -1,0 +1,434 @@
+[
+ {
+  "tier":"T3",
+  "source":"cic2017",
+  "target":"cic2018",
+  "family":"DoS",
+  "top5_source":[
+   "Bwd Packet Length Std",
+   "Bwd Packet Length Min",
+   "Bwd Packet Length Mean",
+   "Total Length of Bwd Packet",
+   "Packet Length Std"
+  ],
+  "top5_target_same_model":[
+   "Bwd Packet Length Min",
+   "Bwd Packet Length Mean",
+   "Bwd Packet Length Std",
+   "Bwd Packet Length Max",
+   "Fwd Packet Length Mean"
+  ],
+  "top5_target_own_model":[
+   "Packet Length Max",
+   "Flow IAT Min",
+   "Total Length of Bwd Packet",
+   "Bwd Packet Length Max",
+   "Total Bwd packets"
+  ]
+ },
+ {
+  "tier":"T3",
+  "source":"cic2017",
+  "target":"cic2018",
+  "family":"DDoS",
+  "top5_source":[
+   "Bwd Packet Length Std",
+   "Bwd Packet Length Min",
+   "Bwd Packet Length Mean",
+   "Total Length of Bwd Packet",
+   "Flow IAT Min"
+  ],
+  "top5_target_same_model":[
+   "Subflow Fwd Bytes",
+   "Fwd Packet Length Max",
+   "Flow IAT Min",
+   "Bwd Packet Length Min",
+   "Bwd Packet Length Std"
+  ],
+  "top5_target_own_model":[
+   "Packet Length Max",
+   "Flow IAT Min",
+   "Total Length of Bwd Packet",
+   "Bwd Packet Length Max",
+   "Total Bwd packets"
+  ]
+ },
+ {
+  "tier":"T3",
+  "source":"cic2017",
+  "target":"cic2018",
+  "family":"BruteForce",
+  "top5_source":[
+   "Bwd Packet Length Min",
+   "Bwd IAT Max",
+   "Fwd Act Data Pkts",
+   "Active Min",
+   "Fwd Packet Length Mean"
+  ],
+  "top5_target_same_model":[
+   "Bwd Packet Length Mean",
+   "Bwd Packet Length Std",
+   "Fwd Packet Length Max",
+   "Bwd IAT Total",
+   "Packet Length Std"
+  ],
+  "top5_target_own_model":[
+   "Packet Length Max",
+   "Flow IAT Min",
+   "Bwd Packet Length Max",
+   "Flow Bytes\/s",
+   "Subflow Bwd Bytes"
+  ]
+ },
+ {
+  "tier":"T3",
+  "source":"cic2017",
+  "target":"cic2018",
+  "family":"Botnet",
+  "top5_source":[
+   "Bwd Packet Length Min",
+   "Bwd Packet Length Max",
+   "Bwd IAT Min",
+   "Subflow Bwd Bytes",
+   "Bwd Packets\/s"
+  ],
+  "top5_target_same_model":[
+   "Bwd Packet Length Mean",
+   "Flow IAT Mean",
+   "Bwd Packet Length Min",
+   "Flow IAT Max",
+   "Bwd Packets\/s"
+  ],
+  "top5_target_own_model":[
+   "Packet Length Max",
+   "Total Length of Bwd Packet",
+   "Bwd Packet Length Max",
+   "Flow Bytes\/s",
+   "Total Bwd packets"
+  ]
+ },
+ {
+  "tier":"T3",
+  "source":"cic2018",
+  "target":"cic2017",
+  "family":"DoS",
+  "top5_source":[
+   "Packet Length Max",
+   "Flow IAT Min",
+   "Total Length of Bwd Packet",
+   "Bwd Packet Length Max",
+   "Bwd IAT Min"
+  ],
+  "top5_target_same_model":[
+   "Packet Length Max",
+   "Bwd Packet Length Max",
+   "Total Length of Bwd Packet",
+   "Flow IAT Min",
+   "Total Bwd packets"
+  ],
+  "top5_target_own_model":[
+   "Bwd Packet Length Std",
+   "Bwd Packet Length Min",
+   "Bwd Packet Length Mean",
+   "Total Length of Bwd Packet",
+   "Packet Length Std"
+  ]
+ },
+ {
+  "tier":"T3",
+  "source":"cic2018",
+  "target":"cic2017",
+  "family":"DDoS",
+  "top5_source":[
+   "Packet Length Max",
+   "Flow IAT Min",
+   "Total Length of Bwd Packet",
+   "Bwd Packet Length Max",
+   "Total Bwd packets"
+  ],
+  "top5_target_same_model":[
+   "Packet Length Max",
+   "Total Length of Bwd Packet",
+   "Flow IAT Min",
+   "Bwd Packet Length Max",
+   "Total Bwd packets"
+  ],
+  "top5_target_own_model":[
+   "Bwd Packet Length Std",
+   "Bwd Packet Length Min",
+   "Bwd Packet Length Mean",
+   "Total Length of Bwd Packet",
+   "Flow IAT Min"
+  ]
+ },
+ {
+  "tier":"T3",
+  "source":"cic2018",
+  "target":"cic2017",
+  "family":"BruteForce",
+  "top5_source":[
+   "Packet Length Max",
+   "Flow IAT Min",
+   "Bwd Packet Length Max",
+   "Flow Bytes\/s",
+   "Subflow Bwd Bytes"
+  ],
+  "top5_target_same_model":[
+   "Flow IAT Min",
+   "Packet Length Max",
+   "Bwd Packet Length Max",
+   "Bwd Packet Length Std",
+   "Total Length of Bwd Packet"
+  ],
+  "top5_target_own_model":[
+   "Bwd Packet Length Min",
+   "Bwd IAT Max",
+   "Fwd Act Data Pkts",
+   "Active Min",
+   "Fwd Packet Length Mean"
+  ]
+ },
+ {
+  "tier":"T3",
+  "source":"cic2018",
+  "target":"cic2017",
+  "family":"Botnet",
+  "top5_source":[
+   "Packet Length Max",
+   "Total Length of Bwd Packet",
+   "Bwd Packet Length Max",
+   "Flow Bytes\/s",
+   "Total Bwd packets"
+  ],
+  "top5_target_same_model":[
+   "Packet Length Max",
+   "Total Length of Bwd Packet",
+   "Fwd Packet Length Std",
+   "Packet Length Std",
+   "Flow IAT Min"
+  ],
+  "top5_target_own_model":[
+   "Bwd Packet Length Min",
+   "Bwd Packet Length Max",
+   "Bwd IAT Min",
+   "Subflow Bwd Bytes",
+   "Bwd Packets\/s"
+  ]
+ },
+ {
+  "tier":"T1",
+  "source":"cic2017",
+  "target":"cic2018",
+  "family":"DoS",
+  "top5_source":[
+   "Bwd Init Win Bytes",
+   "Bwd Packet Length Std",
+   "RST Flag Count",
+   "Dst Port",
+   "Bwd Packet Length Mean"
+  ],
+  "top5_target_same_model":[
+   "Bwd Packet Length Mean",
+   "Dst Port",
+   "Fwd PSH Flags",
+   "RST Flag Count",
+   "Bwd Packet Length Max"
+  ],
+  "top5_target_own_model":[
+   "Bwd Init Win Bytes",
+   "Fwd Seg Size Min",
+   "FWD Init Win Bytes",
+   "Packet Length Max",
+   "Fwd IAT Total"
+  ]
+ },
+ {
+  "tier":"T1",
+  "source":"cic2017",
+  "target":"cic2018",
+  "family":"DDoS",
+  "top5_source":[
+   "Bwd Init Win Bytes",
+   "Bwd Packet Length Std",
+   "RST Flag Count",
+   "Flow IAT Min",
+   "Dst Port"
+  ],
+  "top5_target_same_model":[
+   "Flow IAT Min",
+   "Fwd IAT Min",
+   "RST Flag Count",
+   "Bwd Packet Length Std",
+   "Bwd Packet Length Mean"
+  ],
+  "top5_target_own_model":[
+   "Bwd Init Win Bytes",
+   "Packet Length Max",
+   "Flow IAT Min",
+   "FWD Init Win Bytes",
+   "Total Length of Bwd Packet"
+  ]
+ },
+ {
+  "tier":"T1",
+  "source":"cic2017",
+  "target":"cic2018",
+  "family":"BruteForce",
+  "top5_source":[
+   "Dst Port",
+   "Fwd PSH Flags",
+   "Bwd Init Win Bytes",
+   "RST Flag Count",
+   "Bwd Bulk Rate Avg"
+  ],
+  "top5_target_same_model":[
+   "Dst Port",
+   "Fwd PSH Flags",
+   "Bwd Init Win Bytes",
+   "Bwd Packet Length Std",
+   "Bwd Bulk Rate Avg"
+  ],
+  "top5_target_own_model":[
+   "Bwd Init Win Bytes",
+   "Fwd Seg Size Min",
+   "FWD Init Win Bytes",
+   "Dst Port",
+   "Bwd IAT Total"
+  ]
+ },
+ {
+  "tier":"T1",
+  "source":"cic2017",
+  "target":"cic2018",
+  "family":"Botnet",
+  "top5_source":[
+   "Dst Port",
+   "Bwd Init Win Bytes",
+   "Flow IAT Mean",
+   "RST Flag Count",
+   "Subflow Bwd Bytes"
+  ],
+  "top5_target_same_model":[
+   "Dst Port",
+   "Flow IAT Mean",
+   "Bwd Packet Length Std",
+   "Subflow Bwd Bytes",
+   "Total TCP Flow Time"
+  ],
+  "top5_target_own_model":[
+   "Bwd Init Win Bytes",
+   "Dst Port",
+   "Bwd IAT Total",
+   "Flow Bytes\/s",
+   "Fwd IAT Total"
+  ]
+ },
+ {
+  "tier":"T1",
+  "source":"cic2018",
+  "target":"cic2017",
+  "family":"DoS",
+  "top5_source":[
+   "Bwd Init Win Bytes",
+   "Fwd Seg Size Min",
+   "FWD Init Win Bytes",
+   "Packet Length Max",
+   "Fwd IAT Total"
+  ],
+  "top5_target_same_model":[
+   "Fwd Seg Size Min",
+   "Bwd Init Win Bytes",
+   "FWD Init Win Bytes",
+   "Total Length of Bwd Packet",
+   "Bwd Packet Length Max"
+  ],
+  "top5_target_own_model":[
+   "Bwd Init Win Bytes",
+   "Bwd Packet Length Std",
+   "RST Flag Count",
+   "Dst Port",
+   "Bwd Packet Length Mean"
+  ]
+ },
+ {
+  "tier":"T1",
+  "source":"cic2018",
+  "target":"cic2017",
+  "family":"DDoS",
+  "top5_source":[
+   "Bwd Init Win Bytes",
+   "Packet Length Max",
+   "Flow IAT Min",
+   "FWD Init Win Bytes",
+   "Total Length of Bwd Packet"
+  ],
+  "top5_target_same_model":[
+   "Bwd Init Win Bytes",
+   "Total Length of Bwd Packet",
+   "Packet Length Max",
+   "Fwd Seg Size Min",
+   "Flow Bytes\/s"
+  ],
+  "top5_target_own_model":[
+   "Bwd Init Win Bytes",
+   "Bwd Packet Length Std",
+   "RST Flag Count",
+   "Dst Port",
+   "Flow IAT Min"
+  ]
+ },
+ {
+  "tier":"T1",
+  "source":"cic2018",
+  "target":"cic2017",
+  "family":"BruteForce",
+  "top5_source":[
+   "Bwd Init Win Bytes",
+   "Fwd Seg Size Min",
+   "FWD Init Win Bytes",
+   "Dst Port",
+   "Bwd IAT Total"
+  ],
+  "top5_target_same_model":[
+   "Dst Port",
+   "Fwd Seg Size Min",
+   "FWD Init Win Bytes",
+   "Flow IAT Min",
+   "Flow Bytes\/s"
+  ],
+  "top5_target_own_model":[
+   "Dst Port",
+   "Fwd PSH Flags",
+   "Bwd Init Win Bytes",
+   "RST Flag Count",
+   "Bwd Bulk Rate Avg"
+  ]
+ },
+ {
+  "tier":"T1",
+  "source":"cic2018",
+  "target":"cic2017",
+  "family":"Botnet",
+  "top5_source":[
+   "Bwd Init Win Bytes",
+   "Dst Port",
+   "Bwd IAT Total",
+   "Flow Bytes\/s",
+   "Fwd IAT Total"
+  ],
+  "top5_target_same_model":[
+   "Bwd Init Win Bytes",
+   "Dst Port",
+   "Fwd IAT Total",
+   "Flow Bytes\/s",
+   "Bwd IAT Total"
+  ],
+  "top5_target_own_model":[
+   "Dst Port",
+   "Bwd Init Win Bytes",
+   "Flow IAT Mean",
+   "RST Flag Count",
+   "Subflow Bwd Bytes"
+  ]
+ }
+]

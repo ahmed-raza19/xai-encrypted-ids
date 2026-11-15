@@ -1,0 +1,17 @@
+{
+ "dataset": "hikari",
+ "tier": "T3",
+ "model": "MLP",
+ "method": "KernelSHAP",
+ "budget": 100,
+ "features": 60,
+ "n": 200,
+ "build_s": 0.0014655999839305878,
+ "mean_ms": 7.02275351039134,
+ "p50_ms": 6.937549915164709,
+ "p95_ms": 7.953125005587935,
+ "p99_ms": 10.004394135903564,
+ "max_ms": 10.693599935621023,
+ "throughput_per_s": 142.39429000609698,
+ "peak_mem_increment_mb": 9.86328125
+}

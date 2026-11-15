@@ -1,0 +1,17 @@
+{
+ "dataset": "cic2017",
+ "tier": "T3",
+ "model": "EBM",
+ "method": "KernelSHAP",
+ "budget": 500,
+ "features": 59,
+ "n": 200,
+ "build_s": 0.002388299908488989,
+ "mean_ms": 30.49315799959004,
+ "p50_ms": 30.409950064495206,
+ "p95_ms": 34.76610007928684,
+ "p99_ms": 38.21163902524859,
+ "max_ms": 41.76139994524419,
+ "throughput_per_s": 32.79424190874046,
+ "peak_mem_increment_mb": 27.625
+}

@@ -1,0 +1,153 @@
+{
+ "rows": 397976,
+ "features_T1": 84,
+ "features_T2": 79,
+ "features_T3": 59,
+ "split_rows": {
+  "train": 238850,
+  "test": 79593,
+  "val": 79533
+ },
+ "malicious_share_by_split": {
+  "test": 0.4995,
+  "train": 0.4996,
+  "val": 0.4991
+ },
+ "family_by_split": {
+  "Benign": {
+   "test": 39833,
+   "train": 119524,
+   "val": 39839
+  },
+  "Botnet": {
+   "test": 147,
+   "train": 442,
+   "val": 147
+  },
+  "BruteForce": {
+   "test": 1400,
+   "train": 4204,
+   "val": 1402
+  },
+  "DDoS": {
+   "test": 8950,
+   "train": 26852,
+   "val": 8951
+  },
+  "DoS": {
+   "test": 11584,
+   "train": 34752,
+   "val": 11584
+  },
+  "Heartbleed": {
+   "test": 2,
+   "train": 7,
+   "val": 2
+  },
+  "Infiltration": {
+   "test": 7,
+   "train": 22,
+   "val": 7
+  },
+  "Reconnaissance": {
+   "test": 17664,
+   "train": 53028,
+   "val": 17595
+  },
+  "WebAttack": {
+   "test": 6,
+   "train": 19,
+   "val": 6
+  }
+ },
+ "T3_feature_groups": {
+  "Flow Duration": "timing",
+  "Total Fwd Packet": "volume_direction",
+  "Total Bwd packets": "volume_direction",
+  "Total Length of Fwd Packet": "size",
+  "Total Length of Bwd Packet": "size",
+  "Fwd Packet Length Max": "size",
+  "Fwd Packet Length Min": "size",
+  "Fwd Packet Length Mean": "size",
+  "Fwd Packet Length Std": "size",
+  "Bwd Packet Length Max": "size",
+  "Bwd Packet Length Min": "size",
+  "Bwd Packet Length Mean": "size",
+  "Bwd Packet Length Std": "size",
+  "Flow Bytes/s": "timing",
+  "Flow Packets/s": "timing",
+  "Flow IAT Mean": "timing",
+  "Flow IAT Std": "timing",
+  "Flow IAT Max": "timing",
+  "Flow IAT Min": "timing",
+  "Fwd IAT Total": "timing",
+  "Fwd IAT Mean": "timing",
+  "Fwd IAT Std": "timing",
+  "Fwd IAT Max": "timing",
+  "Fwd IAT Min": "timing",
+  "Bwd IAT Total": "timing",
+  "Bwd IAT Mean": "timing",
+  "Bwd IAT Std": "timing",
+  "Bwd IAT Max": "timing",
+  "Bwd IAT Min": "timing",
+  "Fwd Packets/s": "timing",
+  "Bwd Packets/s": "timing",
+  "Packet Length Min": "size",
+  "Packet Length Max": "size",
+  "Packet Length Mean": "size",
+  "Packet Length Std": "size",
+  "Packet Length Variance": "size",
+  "Down/Up Ratio": "volume_direction",
+  "Average Packet Size": "size",
+  "Fwd Segment Size Avg": "size",
+  "Bwd Segment Size Avg": "size",
+  "Fwd Bytes/Bulk Avg": "size",
+  "Fwd Packet/Bulk Avg": "volume_direction",
+  "Fwd Bulk Rate Avg": "timing",
+  "Bwd Bytes/Bulk Avg": "size",
+  "Bwd Packet/Bulk Avg": "volume_direction",
+  "Bwd Bulk Rate Avg": "timing",
+  "Subflow Fwd Packets": "volume_direction",
+  "Subflow Fwd Bytes": "size",
+  "Subflow Bwd Packets": "volume_direction",
+  "Subflow Bwd Bytes": "size",
+  "Fwd Act Data Pkts": "volume_direction",
+  "Active Mean": "timing",
+  "Active Std": "timing",
+  "Active Max": "timing",
+  "Active Min": "timing",
+  "Idle Mean": "timing",
+  "Idle Std": "timing",
+  "Idle Max": "timing",
+  "Idle Min": "timing"
+ },
+ "T1_only": [
+  "Dst Port",
+  "ICMP Code",
+  "ICMP Type",
+  "Protocol",
+  "Src Port"
+ ],
+ "T2_only": [
+  "ACK Flag Count",
+  "Bwd Header Length",
+  "Bwd Init Win Bytes",
+  "Bwd PSH Flags",
+  "Bwd RST Flags",
+  "Bwd URG Flags",
+  "CWR Flag Count",
+  "ECE Flag Count",
+  "FIN Flag Count",
+  "FWD Init Win Bytes",
+  "Fwd Header Length",
+  "Fwd PSH Flags",
+  "Fwd RST Flags",
+  "Fwd Seg Size Min",
+  "Fwd URG Flags",
+  "PSH Flag Count",
+  "RST Flag Count",
+  "SYN Flag Count",
+  "Total TCP Flow Time",
+  "URG Flag Count"
+ ]
+}

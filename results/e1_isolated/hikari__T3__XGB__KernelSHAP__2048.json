@@ -1,0 +1,17 @@
+{
+ "dataset": "hikari",
+ "tier": "T3",
+ "model": "XGB",
+ "method": "KernelSHAP",
+ "budget": 2048,
+ "features": 60,
+ "n": 100,
+ "build_s": 0.002734099980443716,
+ "mean_ms": 400.5029539903626,
+ "p50_ms": 390.8331998391077,
+ "p95_ms": 440.05217995727435,
+ "p99_ms": 483.21501104393997,
+ "max_ms": 529.7758001834154,
+ "throughput_per_s": 2.496860485139052,
+ "peak_mem_increment_mb": 29.73828125
+}

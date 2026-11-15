@@ -1,0 +1,17 @@
+{
+ "dataset": "cic2017",
+ "tier": "T3",
+ "model": "RF",
+ "method": "TreeSHAP-path",
+ "budget": null,
+ "features": 59,
+ "n": 200,
+ "build_s": 0.005968899931758642,
+ "mean_ms": 9.91732700029388,
+ "p50_ms": 9.772099903784692,
+ "p95_ms": 11.006895056925712,
+ "p99_ms": 12.60400010971352,
+ "max_ms": 13.619699981063604,
+ "throughput_per_s": 100.8336217985317,
+ "peak_mem_increment_mb": 2.19921875
+}

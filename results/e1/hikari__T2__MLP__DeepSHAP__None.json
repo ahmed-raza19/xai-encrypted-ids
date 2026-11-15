@@ -1,0 +1,17 @@
+{
+ "dataset": "hikari",
+ "tier": "T2",
+ "model": "MLP",
+ "method": "DeepSHAP",
+ "budget": null,
+ "features": 79,
+ "n": 200,
+ "build_s": 0.005426499992609024,
+ "mean_ms": 1.871245502261445,
+ "p50_ms": 1.7274500569328666,
+ "p95_ms": 2.7886698953807336,
+ "p99_ms": 3.48863701801747,
+ "max_ms": 3.9393999613821507,
+ "throughput_per_s": 534.4034221012026,
+ "peak_mem_increment_mb": 4.796875
+}

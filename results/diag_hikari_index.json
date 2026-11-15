@@ -1,0 +1,43 @@
+{
+ "rows": 555278,
+ "attack_rows": 37696,
+ "category_counts": {
+  "Benign": 347431,
+  "Background": 170151,
+  "Probing": 23388,
+  "Bruteforce": 5884,
+  "Bruteforce-XML": 5145,
+  "XMRIGCC CryptoMiner": 3279
+ },
+ "contiguous_category_blocks": 6,
+ "auc_idx0": 0.7074225382003395,
+ "auc_idx1": 0.07120144613318947,
+ "idx0_equals_row": true,
+ "auc_idx0_best_direction": 0.7074225382003395,
+ "index_range_by_category": {
+  "Background": [
+   0,
+   170150
+  ],
+  "Benign": [
+   0,
+   350709
+  ],
+  "Bruteforce": [
+   0,
+   5883
+  ],
+  "Bruteforce-XML": [
+   0,
+   5144
+  ],
+  "Probing": [
+   0,
+   23387
+  ],
+  "XMRIGCC CryptoMiner": [
+   311,
+   280842
+  ]
+ }
+}
