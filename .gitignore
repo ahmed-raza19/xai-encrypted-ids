@@ -1,7 +1,8 @@
 # Large or machine-specific files that are not shared
 .venv/
 data/
-results/models/
+results/models/*
+!results/models/cic2017_T3_XGB.joblib
 __pycache__/
 *.pyc
 *.log
