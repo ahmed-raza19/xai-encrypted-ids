@@ -1,0 +1,29 @@
+\begin{table}[!htbp]
+\centering
+\caption{E3 --- cross-network explanation consistency for shared attack families (Jaccard@5 of mean $|\phi|$ profiles; TreeSHAP-interventional, XGBoost). Noise floors: random halves of the same flows and a model retrained with another seed.}
+\label{tab:drift}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lllrrrrrr}
+\toprule
+\textbf{Tier} & \textbf{Direction} & \textbf{Family} & \textbf{Rec.\,src} & \textbf{Rec.\,tgt} & \textbf{Halves} & \textbf{Seed} & \textbf{Same model} & \textbf{Own models} \\
+\midrule
+T3 & 17$\rightarrow$18 & DoS & 0.944 & 0.429 & 1.00 & 1.00 & 0.43 & 0.11 \\
+T3 & 17$\rightarrow$18 & DDoS & 1.000 & 0.907 & 1.00 & 0.67 & 0.43 & 0.25 \\
+T3 & 17$\rightarrow$18 & BruteForce & 0.991 & 0.757 & 0.87 & 0.67 & 0.00 & 0.00 \\
+T3 & 17$\rightarrow$18 & Botnet & 1.000 & 0.989 & 1.00 & 0.67 & 0.25 & 0.11 \\
+T3 & 18$\rightarrow$17 & DoS & 0.835 & 1.000 & 1.00 & 1.00 & 0.67 & 0.11 \\
+T3 & 18$\rightarrow$17 & DDoS & 0.907 & 0.999 & 1.00 & 1.00 & 1.00 & 0.25 \\
+T3 & 18$\rightarrow$17 & BruteForce & 1.000 & 0.994 & 1.00 & 1.00 & 0.43 & 0.00 \\
+T3 & 18$\rightarrow$17 & Botnet & 1.000 & 0.061 & 1.00 & 0.67 & 0.25 & 0.11 \\
+T1 & 17$\rightarrow$18 & DoS & 0.996 & 0.470 & 1.00 & 1.00 & 0.43 & 0.11 \\
+T1 & 17$\rightarrow$18 & DDoS & 1.000 & 0.856 & 1.00 & 1.00 & 0.43 & 0.25 \\
+T1 & 17$\rightarrow$18 & BruteForce & 1.000 & 1.000 & 1.00 & 0.67 & 0.67 & 0.25 \\
+T1 & 17$\rightarrow$18 & Botnet & 1.000 & 1.000 & 1.00 & 1.00 & 0.43 & 0.25 \\
+T1 & 18$\rightarrow$17 & DoS & 0.958 & 0.999 & 1.00 & 0.67 & 0.43 & 0.11 \\
+T1 & 18$\rightarrow$17 & DDoS & 0.907 & 0.999 & 1.00 & 0.43 & 0.43 & 0.25 \\
+T1 & 18$\rightarrow$17 & BruteForce & 1.000 & 1.000 & 1.00 & 0.67 & 0.43 & 0.25 \\
+T1 & 18$\rightarrow$17 & Botnet & 1.000 & 1.000 & 1.00 & 1.00 & 1.00 & 0.25 \\
+\bottomrule
+\end{tabular}
+\end{table}

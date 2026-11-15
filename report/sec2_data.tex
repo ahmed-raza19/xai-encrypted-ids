@@ -1,0 +1,57 @@
+% ══════════════════════════════════════════════════════════════════
+%  SECTION II --- DATASET, PREPROCESSING AND EXPERIMENTAL SETUP
+% ══════════════════════════════════════════════════════════════════
+\section{Dataset, Preprocessing and Experimental Setup}
+\label{sec:data}
+
+\subsection{Datasets}
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+  \item \textbf{HIKARI-2021}~\cite{hikari}: real encrypted HTTPS attacks (brute force, probing, cryptomining). Its normal traffic is built to look like the attacks.
+  \item \textbf{CIC-IDS2017}~\cite{cicids2017}, corrected labels~\cite{engelen2021}: a company network with DoS, DDoS, port scans, brute force, botnet and web attacks.
+  \item \textbf{CSE-CIC-IDS2018}~\cite{liu2022error}: the same attack types on a different network, used to test network change (RQ3).
+\end{itemize}
+
+\input{generated/tab_data.tex}
+
+\subsection{Preprocessing and visibility tiers}
+All datasets go through the same steps. IP addresses and timestamps are removed, broken values are fixed, and labels are mapped to common attack families. Each dataset is capped at 300k--400k flows without losing small attack classes, then split by time into 60\% training, 20\% validation and 20\% test within each attack family. Duplicates and flows that appear in both training and test are removed, class weights handle the class imbalance, and LR and MLP inputs are log-scaled and standardised.
+
+Three \emph{visibility tiers} model what encryption hides~\cite{rfc9000}. $T_1$ keeps all features. $T_2$ (TLS~1.3) removes ports and protocol. $T_3$ (QUIC) also removes all TCP-header features, so only packet sizes, timing and direction remain. CIC-IDS2017 has 84, 79 and 59 features in the three tiers, and HIKARI 81, 79 and 60.
+
+\subsection{Checking the encryption assumption on real packets}
+\label{sec:pcap}
+To confirm that $T_3$ is exactly what an observer of encrypted traffic can compute, we removed the payload from two real HIKARI attack captures and extracted flows with NFStream~\cite{nfstream} before and after (Table~\ref{tab:pcap}). Stripping removed 93--94\% of the bytes, yet all 62 metadata features stayed identical in all 34{,}759 flows, while the plaintext handshake data (TLS server name and fingerprints) disappeared. Header-only extraction was also 4--10 times faster.
+
+\begin{table}[!htbp]
+\centering
+\caption{Removing the payload from the encrypted HIKARI attack captures (NFStream)}
+\label{tab:pcap}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrr}
+\toprule
+\textbf{Measurement} & \textbf{BRUTEFORCE-HTTPS} & \textbf{BRUTEFORCE-XML} \\
+\midrule
+Packets & 622{,}670 & 290{,}207 \\
+Capture size, full $\rightarrow$ header-only (MB) & 679.3 $\rightarrow$ 49.9 & 258.5 $\rightarrow$ 22.1 \\
+Bytes removed & 94.0\% & 93.0\% \\
+Flows (same before and after) & 19{,}924 & 14{,}835 \\
+Metadata features identical in every flow & 62 / 62 & 62 / 62 \\
+Flows with TLS server name, full $\rightarrow$ stripped & 53.0\% $\rightarrow$ 0\% & 40.5\% $\rightarrow$ 0\% \\
+Flows with TLS fingerprint, full $\rightarrow$ stripped & 20.1\% $\rightarrow$ 0\% & 17.7\% $\rightarrow$ 0\% \\
+Extraction time, full $\rightarrow$ stripped (s) & 83.3 $\rightarrow$ 8.7 & 20.7 $\rightarrow$ 4.7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Experimental setup}
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+  \item \textbf{Threshold:} each detector alerts at the score that gives at most 1\% false positives on validation data.
+  \item \textbf{E1, cost (RQ1):} the same 200 test flows (100 attack, 100 benign) are explained by every explainer in a fresh process on one CPU core (100 flows for the two slowest settings); time and memory are recorded.
+  \item \textbf{E2, quality (RQ2):} the same explanations are scored for faithfulness, infidelity and agreement.
+  \item \textbf{E3, network change (RQ3):} explanations of the same attack family are compared across CIC-IDS2017 and CSE-CIC-IDS2018.
+  \item \textbf{E4, live traffic (RQ4):} 20{,}000 test flows (5\% attacks) are replayed at 25\%, 75\% and 150\% of detection capacity, as normal traffic and with a 3{,}000-flow port-scan flood. All policies see identical traffic.
+  \item \textbf{Detector settings:} LR ($C=1$, balanced class weights); RF (100 trees, depth 20); XGBoost (300 trees, depth 6, learning rate 0.1, subsampling 0.9); MLP (hidden layers of 64 and 32 units, Adam, learning rate $10^{-3}$, 12 epochs); EBM (no interaction terms, 4 outer bags).
+  \item \textbf{Explainer budgets:} KernelSHAP 100, 500 or 2{,}048 samples with a 50-point background; LIME 500, 1{,}000 or 5{,}000 samples; IG 16, 32 or 64 steps.
+  \item \textbf{Seed:} 42 for every random step.
+\end{itemize}

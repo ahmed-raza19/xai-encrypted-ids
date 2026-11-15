@@ -1,0 +1,49 @@
+\begin{table}[!htbp]
+\centering
+\caption{E2 --- explanation fidelity on tier $T_3$ (median over flows, training-median removal baseline; CIC = CIC-IDS2017, HIK = HIKARI-2021). Faith.\ = faithfulness correlation and AOPC$^+$ = deletion AOPC minus random-order AOPC (higher is better); Infid.\ = normalised subset-removal infidelity (0 = attributions predict every removal effect after optimal rescaling, 1 = no linear relation; lower is better). The benign-sample baseline, max-sensitivity and sparsity are summarised in the text.}
+\label{tab:fidelity}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llrrrrrr}
+\toprule
+\textbf{Model} & \textbf{Explainer} & \textbf{Faith.\,CIC} & \textbf{Faith.\,HIK} & \textbf{AOPC$^+$\,CIC} & \textbf{AOPC$^+$\,HIK} & \textbf{Infid.\,CIC} & \textbf{Infid.\,HIK} \\
+\midrule
+LR & KernelSHAP-500 & 0.460 & 0.108 & 0.625 & 0.050 & 0.70 & 0.92 \\
+ & LinearSHAP & 0.442 & 0.154 & 0.624 & 0.067 & 0.80 & 0.95 \\
+ & LIME-1000 & 0.387 & 0.438 & 0.531 & 0.340 & 0.83 & 0.68 \\
+\midrule
+EBM & EBM-native & 0.470 & 0.696 & 0.440 & 0.279 & 0.75 & 0.14 \\
+ & KernelSHAP-500 & 0.336 & 0.200 & 0.195 & 0.073 & 0.84 & 0.55 \\
+\midrule
+XGB & TreeSHAP-path & 0.602 & 0.460 & 0.337 & 0.176 & 0.59 & 0.65 \\
+ & TreeSHAP-interv & 0.522 & 0.269 & 0.289 & 0.142 & 0.66 & 0.36 \\
+ & KernelSHAP-2048 & 0.498 & 0.295 & 0.284 & 0.140 & 0.67 & 0.47 \\
+ & KernelSHAP-500 & 0.493 & 0.226 & 0.237 & 0.125 & 0.68 & 0.41 \\
+ & LIME-5000 & 0.343 & 0.327 & 0.227 & 0.186 & 0.76 & 0.36 \\
+ & LIME-1000 & 0.299 & 0.213 & 0.189 & 0.162 & 0.79 & 0.38 \\
+ & LIME-500 & 0.279 & 0.174 & 0.155 & 0.132 & 0.81 & 0.41 \\
+ & PartitionSHAP-500 & 0.275 & 0.290 & 0.073 & 0.117 & 0.78 & 0.42 \\
+ & KernelSHAP-100 & 0.048 & 0.025 & 0.031 & 0.013 & 0.98 & 0.98 \\
+\midrule
+RF & TreeSHAP-interv & 0.595 & 0.226 & 0.172 & 0.143 & 0.16 & 0.06 \\
+ & KernelSHAP-2048 & 0.570 & 0.183 & 0.159 & 0.083 & 0.15 & 0.09 \\
+ & TreeSHAP-path & 0.516 & 0.345 & 0.133 & 0.087 & 0.16 & 0.14 \\
+ & KernelSHAP-500 & 0.500 & 0.130 & 0.138 & 0.052 & 0.20 & 0.20 \\
+ & LIME-5000 & 0.334 & 0.287 & 0.062 & 0.066 & 0.34 & 0.23 \\
+ & LIME-1000 & 0.324 & 0.270 & 0.057 & 0.100 & 0.32 & 0.09 \\
+ & LIME-500 & 0.316 & 0.254 & 0.048 & 0.109 & 0.31 & 0.07 \\
+ & KernelSHAP-100 & 0.067 & 0.033 & 0.011 & 0.009 & 0.95 & 1.00 \\
+\midrule
+MLP & IG-16 & 0.564 & 0.455 & 0.534 & 0.151 & 0.62 & 0.50 \\
+ & IG-32 & 0.556 & 0.449 & 0.530 & 0.141 & 0.60 & 0.51 \\
+ & IG-64 & 0.555 & 0.448 & 0.526 & 0.141 & 0.62 & 0.51 \\
+ & KernelSHAP-500 & 0.321 & 0.021 & 0.363 & -0.006 & 0.79 & 0.91 \\
+ & KernelSHAP-2048 & 0.314 & 0.043 & 0.362 & -0.064 & 0.77 & 0.92 \\
+ & DeepSHAP & 0.302 & 0.088 & 0.401 & -0.020 & 0.85 & 0.94 \\
+ & LIME-5000 & 0.289 & 0.250 & 0.276 & 0.120 & 0.89 & 0.76 \\
+ & LIME-1000 & 0.279 & 0.250 & 0.283 & 0.116 & 0.88 & 0.75 \\
+ & LIME-500 & 0.270 & 0.235 & 0.267 & 0.109 & 0.87 & 0.76 \\
+ & KernelSHAP-100 & 0.050 & 0.003 & 0.039 & 0.002 & 0.98 & 0.99 \\
+\bottomrule
+\end{tabular}
+\end{table}

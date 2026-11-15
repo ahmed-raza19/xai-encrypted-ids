@@ -1,0 +1,41 @@
+\begin{table}[!htbp]
+\centering
+\caption{Known-answer test (CIC-IDS2017, $T_3$). Found = share of the 100 flows that are attacks only because of the planted feature where it is ranked first (should be 1); Weight = its share of the explanation for those flows; Wrong = share of 100 real attacks where the irrelevant planted feature is ranked first (should be 0).}
+\label{tab:sanity}
+\scriptsize
+\setlength{\tabcolsep}{5pt}
+\begin{minipage}[t]{0.495\textwidth}
+\centering
+\begin{tabular}{lrrr}
+\toprule
+\multicolumn{4}{c}{\textbf{XGBoost}} \\
+\midrule
+\textbf{Explainer} & \textbf{Found} & \textbf{Weight} & \textbf{Wrong} \\
+\midrule
+TreeSHAP-path & 1.00 & 0.66 & 0.01 \\
+TreeSHAP-interv & 1.00 & 0.75 & 0.00 \\
+KernelSHAP-100 & 0.85 & 0.30 & 0.02 \\
+KernelSHAP-500 & 1.00 & 0.79 & 0.00 \\
+LIME-1000 & 1.00 & 0.27 & 0.88 \\
+PartitionSHAP-500 & 1.00 & 0.88 & 0.00 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.495\textwidth}
+\centering
+\begin{tabular}{lrrr}
+\toprule
+\multicolumn{4}{c}{\textbf{MLP}} \\
+\midrule
+\textbf{Explainer} & \textbf{Found} & \textbf{Weight} & \textbf{Wrong} \\
+\midrule
+IG-16 & 0.99 & 0.58 & 0.16 \\
+DeepSHAP & 0.00 & 0.03 & 0.00 \\
+KernelSHAP-100 & 0.47 & 0.08 & 0.01 \\
+KernelSHAP-500 & 1.00 & 0.37 & 0.05 \\
+LIME-1000 & 1.00 & 0.17 & 0.55 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{table}

@@ -1,0 +1,28 @@
+\begin{table}[!htbp]
+\centering
+\caption{Ablation A6 (rule parameters) on HIKARI-2021 at 75\% load: one parameter changed at a time on identical streams}
+\label{tab:sens:hikari_XGB_T3}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+\textbf{Traffic} & \textbf{Parameter} & \textbf{Value} & \textbf{Expl.\,rate} & \textbf{$O_{\mathrm{sync}}$} & \textbf{$O_{\mathrm{async}}$} & \textbf{Cov.\,sync} & \textbf{+def.} & \textbf{Deep} & \textbf{p99 ms} \\
+\midrule
+mixed & Proposed (defaults) & -- & 0.073 & 0.103 & 3.19 & 0.952 & 1.000 & 1.000 & 14.2 \\
+ & uncertainty band (share of val.\ flows) & 0.02 & 0.067 & 0.101 & 2.47 & 0.970 & 1.000 & 1.000 & 42.4 \\
+ & uncertainty band (share of val.\ flows) & 0.1 & 0.088 & 0.104 & 3.55 & 0.939 & 1.000 & 1.000 & 13.3 \\
+ & novelty quantile $\kappa$ & 0.95 & 0.102 & 0.106 & 3.27 & 0.824 & 1.000 & 1.000 & 13.3 \\
+ & novelty quantile $\kappa$ & 0.999 & 0.053 & 0.096 & 3.01 & 1.000 & 1.000 & 1.000 & 54.9 \\
+ & audit rate $\rho$ & 0.001 & 0.069 & 0.101 & 3.23 & 0.988 & 1.000 & 1.000 & 9.2 \\
+ & audit rate $\rho$ & 0.02 & 0.087 & 0.105 & 3.15 & 0.891 & 1.000 & 1.000 & 10.0 \\
+\midrule
+burst & Proposed (defaults) & -- & 0.106 & 0.100 & 3.78 & 0.865 & 1.000 & 1.000 & 89.0 \\
+ & uncertainty band (share of val.\ flows) & 0.02 & 0.096 & 0.100 & 3.11 & 0.876 & 1.000 & 1.000 & 78.1 \\
+ & uncertainty band (share of val.\ flows) & 0.1 & 0.133 & 0.102 & 4.36 & 0.848 & 1.000 & 1.000 & 10.3 \\
+ & novelty quantile $\kappa$ & 0.95 & 0.132 & 0.105 & 3.96 & 0.766 & 1.000 & 1.000 & 11.3 \\
+ & novelty quantile $\kappa$ & 0.999 & 0.089 & 0.095 & 3.69 & 0.904 & 1.000 & 1.000 & 35.1 \\
+ & audit rate $\rho$ & 0.001 & 0.102 & 0.099 & 3.91 & 0.892 & 1.000 & 1.000 & 8.0 \\
+ & audit rate $\rho$ & 0.02 & 0.118 & 0.104 & 3.64 & 0.847 & 1.000 & 1.000 & 59.8 \\
+\bottomrule
+\end{tabular}
+\end{table}

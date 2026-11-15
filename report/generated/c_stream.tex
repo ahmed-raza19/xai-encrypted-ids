@@ -1,0 +1,46 @@
+\begin{table}[!htbp]
+\centering
+\caption{Explanation policies on CIC-IDS2017 at 75\% load. Overhead = explanation work as a share of detection time; Covered = share of true alerts with an exact explanation within 1\,s; Delay = 99th-percentile time to a verdict in seconds.}
+\label{tab:stream}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{minipage}[t]{0.495\textwidth}
+\centering
+\begin{tabular}{lrrr}
+\toprule
+\multicolumn{4}{c}{\textbf{Normal (mixed) traffic}} \\
+\midrule
+\textbf{Policy} & \textbf{Overhead} & \textbf{Covered} & \textbf{Delay (s)} \\
+\midrule
+B1 explain none & 0.00 & 0.00 & 0.003 \\
+B2a all, TreeSHAP & 2.14 & 0.06 & 16.72 \\
+B2b all, KernelSHAP & 257.67 & 0.00 & 2117.02 \\
+B3 one global expl. & 0.00 & 0.00 & 0.058 \\
+B4 random & 0.37 & 0.16 & 0.243 \\
+B5 every alert & 0.13 & 1.00 & 0.008 \\
+B6 learned explainer & 0.29 & 0.75 & 1.44 \\
+\textbf{Proposed} & 0.11 & 1.00 & 0.032 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.495\textwidth}
+\centering
+\begin{tabular}{lrrr}
+\toprule
+\multicolumn{4}{c}{\textbf{With port-scan flood}} \\
+\midrule
+\textbf{Policy} & \textbf{Overhead} & \textbf{Covered} & \textbf{Delay (s)} \\
+\midrule
+B1 explain none & 0.00 & 0.00 & 0.006 \\
+B2a all, TreeSHAP & 2.15 & 0.01 & 18.68 \\
+B2b all, KernelSHAP & 242.34 & 0.00 & 2435.23 \\
+B3 one global expl. & 0.00 & 0.00 & 0.004 \\
+B4 random & 0.60 & 0.03 & 2.58 \\
+B5 every alert & 0.42 & 0.41 & 2.68 \\
+B6 learned explainer & 0.29 & 1.00 & 0.670 \\
+\textbf{Proposed} & 0.10 & 1.00 & 0.035 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{table}

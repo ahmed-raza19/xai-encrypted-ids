@@ -1,0 +1,45 @@
+% ══════════════════════════════════════════════════════════════════
+%  SECTION V --- COMPARISON WITH EXISTING RESEARCH
+% ══════════════════════════════════════════════════════════════════
+\section{Comparison with Existing Research}
+\label{sec:compare}
+Where a published study used the same dataset or setup, we place its number next to ours (Table~\ref{tab:compare}). Because hardware and setups differ between studies, we also re-ran the most common published setups on our own data and laptop: TreeSHAP on tree models (P5, P6, P8, P9, P10~\cite{p5,p6,p8,p9,p10}), LIME with 5{,}000 samples (P5), KernelSHAP and DeepSHAP on a neural network (P2~\cite{p2}), and the cross-dataset test of P9. The encrypted-traffic studies we reviewed (P1, P3, P4, P7~\cite{p1,p3,p4,p7}) report neither explanation cost nor quality, so only their detection results can be compared.
+
+\begin{table}[!htbp]
+\centering
+\caption{Our results next to published results}
+\label{tab:compare}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.5cm} >{\raggedright\arraybackslash}p{3.9cm} >{\raggedright\arraybackslash}p{3.9cm} Y}
+\toprule
+\textbf{Aspect} & \textbf{Published result} & \textbf{This study} & \textbf{Comparable?} \\
+\midrule
+\multicolumn{4}{l}{\textit{Detection}} \\
+CIC-IDS2017, same network & P9: RF macro-F1 0.99 (random split) & RF macro-F1 0.81 (time split); binary F1 0.99 & Partly: our split is stricter \\
+CIC-IDS2017 $\rightarrow$ 2018 & P9: RF macro-F1 0.13--0.21 & RF macro-F1 0.22 ($T_1$ and $T_3$) & Yes: same test, same result \\
+Cross-network transfer & R3~\cite{cerasuolo2026}: F1 drops 40--80\% & F1 drops 20--35\% & Different data, same trend \\
+HIKARI-2021 & Vitorino et al.~\cite{vitorino2024}: F1 83.5--83.7\% (random split) & F1 0.12--0.26 at 1\% FPR; 0.69--0.73 at best threshold & No: leak in the public file (see text) \\
+\midrule
+\multicolumn{4}{l}{\textit{Explanation cost (per flow)}} \\
+TreeSHAP on XGBoost & P5: 20--80\,ms; P6: 30--34\,ms per alert & 0.98\,ms (+30\,ms to build once) & Published times include building \\
+LIME, 5{,}000 samples & P5: 4.9--36\,s & 90\,ms & Settings not reported \\
+KernelSHAP, neural net & P2: about 9.2\,s & 92\,ms (2{,}048 samples) & Settings not reported \\
+DeepSHAP / IG & P2: 132\,ms / 0.09\,ms (batch average) & 1.6\,ms / 1.1\,ms (single flow) & Batch vs.\ single flow \\
+Detector time & P8: XGBoost 31\,ms (Raspberry~Pi); P7: microseconds (batch) & XGBoost 0.38--0.55\,ms & Different hardware \\
+\midrule
+\multicolumn{4}{l}{\textit{Explanation policy and quality}} \\
+When to explain & R2~\cite{dmthreatnet2026}: never per flow; P8: every alert & Trigger: overhead 0.10, all alerts within 1\,s, flood delay 5--35\,ms & First measured policy \\
+Stability across seeds & P10: 0.86--0.90 & 0.82 (Jaccard@5) & Different index, similar level \\
+SHAP vs.\ LIME agreement & P5: $\kappa = 0.94$ (unencrypted data) & Jaccard@5 0.30--0.39 & Much lower on metadata \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+  \item \textbf{Detection matches when the setup matches.} Like P9, our Random Forest collapses when moved from CIC-IDS2017 to CIC-IDS2018 (macro-F1 0.22 vs.\ 0.13--0.21). Our same-network score is lower than P9's (0.81 vs.\ 0.99) because we split by time and remove duplicates; a random split puts near-copies of test flows into training~\cite{arp2022}.
+  \item \textbf{HIKARI's published 83\% F1 could not be reproduced.} The public HIKARI file is sorted by traffic type and contains two row-number columns; one of them alone separates attacks from normal traffic with ROC-AUC 0.93. This is a data leak, and we remove both columns.
+  \item \textbf{Published SHAP costs look high because of what was timed.} Building a TreeSHAP explainer takes 30\,ms, but explaining one flow takes only 0.98\,ms; P6's 30--34\,ms per alert matches the sum. Batch averages (P2) hide the real per-flow cost in the other direction, and R1~\cite{kalakoti2026} calls SHAP and LIME ``heavy'' without giving numbers.
+  \item \textbf{Explainers agree much less on encrypted metadata} than on unencrypted data (TreeSHAP vs.\ LIME share 2--3 of their top-5 features, against $\kappa=0.94$ in P5).
+\end{itemize}
+\textbf{Limits of the comparison.} Studies use different hardware, time different things (one flow, one alert or a batch), use different dataset versions and splits and different quality metrics, and often do not report key settings. All our numerical claims therefore rest on our own re-runs; published numbers only show where our results sit.

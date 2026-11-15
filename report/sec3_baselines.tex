@@ -1,0 +1,14 @@
+% ══════════════════════════════════════════════════════════════════
+%  SECTION III --- BASELINE EVALUATION
+% ══════════════════════════════════════════════════════════════════
+\section{Baseline Evaluation}
+\label{sec:baselines}
+We use two kinds of baselines. The first is the five detectors (Table~\ref{tab:det}). The second is six explanation policies that the trigger is compared with in Section~\ref{sec:rq4}: explain nothing (B1); explain every flow with TreeSHAP or KernelSHAP (B2a/B2b); show one global explanation (B3); explain random flows at the trigger's rate (B4); explain every alert (B5); and use a learned fast explainer for every flow (B6).
+
+\input{generated/c_detection.tex}
+
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+  \item \textbf{CIC-IDS2017 is easy, even when encrypted.} The tree models and the MLP reach F1 0.96--0.996. Hiding ports and TCP headers ($T_1 \rightarrow T_3$) costs little: XGBoost 0.996 $\rightarrow$ 0.981 (precision 0.993, recall 0.969), Random Forest 0.992 $\rightarrow$ 0.988, MLP 0.962 $\rightarrow$ 0.960. Only LR loses more (0.896 $\rightarrow$ 0.867). The explainable EBM reaches 0.975~\cite{rudin2019}.
+  \item \textbf{HIKARI-2021 is hard.} All models rank attacks well (ROC-AUC 0.93), but at 1\% false positives they catch only 7--18\% of attacks (F1 0.12--0.26), because HIKARI's normal traffic includes HTTPS logins to the same servers. Allowing 11--13\% false positives raises F1 to 0.69--0.73. HIKARI's explanation results are therefore read together with CIC-IDS2017 only.
+  \item \textbf{Detection time per flow} (one core): 0.06--0.08\,ms for LR and the MLP, 0.36--0.55\,ms for the EBM and XGBoost, and 3.5--4.3\,ms for Random Forest. All overhead numbers in this report are relative to these times.
+\end{itemize}

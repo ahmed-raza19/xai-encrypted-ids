@@ -1,0 +1,21 @@
+\subsection{RQ1 --- How much does an explanation cost?}
+\label{sec:rq1}
+Table~\ref{tab:costfid} gives the cost and the quality of every explainer, and Fig.~\ref{fig:pareto} plots one against the other.
+
+\input{generated/c_costfid.tex}
+
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+  \item \textbf{Two cost classes.} Model-specific explainers cost about as much as detection: the EBM's own explanations take 0.3\,ms, TreeSHAP on XGBoost about 1\,ms, and IG and DeepSHAP 1--3\,ms. Random Forest is the exception, because its large trees make TreeSHAP take 10--40\,ms. Model-agnostic explainers take 7--524\,ms: KernelSHAP grows with its sample budget, LIME needs 16--107\,ms and PartitionSHAP about 175\,ms.
+  \item \textbf{Fewer features do not make explanations cheaper.} The 84-feature $T_1$ model costs about the same to explain as the 59-feature $T_3$ model (TreeSHAP 0.84 vs.\ 0.98\,ms).
+  \item \textbf{Memory is not a problem} (at most 176\,MB), and timing is stable: for explainers above 5\,ms, the 99th percentile stays within 1.1--1.7 times the median.
+  \item \textbf{H1 (at least 100$\times$ slower) is only partly true.} It holds for 25 of the 44 slow-explainer settings, up to 1{,}500$\times$. It fails on the slow Random Forest (7--37$\times$) and for small budgets, and with a fast explainer the time per flow grows only 1.1--49 times.
+  \item \textbf{In flows per second:} on one core, XGBoost alone handles about 1{,}800 flows/s; with TreeSHAP for every flow it handles 660, and with KernelSHAP-500 only 9. Even if only the 5\% alerts are explained, KernelSHAP-500 limits a core to about 165 flows/s.
+  \item \textbf{Paying more does not buy quality.} In 8 of 10 dataset--detector pairs the most faithful explainer is a fast model-specific one, usually 22--380 times cheaper than the best slow one. Across all settings, cost and faithfulness are not correlated ($\rho_s=-0.19$, $p=0.12$).
+\end{itemize}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{../figures/fig_cost_fidelity_pareto.pdf}
+\caption{Cost versus faithfulness of every explainer on $T_3$. The step line is the best trade-off (cheaper and more faithful is better).}
+\label{fig:pareto}
+\end{figure}

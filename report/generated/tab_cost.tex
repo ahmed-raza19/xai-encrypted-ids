@@ -1,0 +1,49 @@
+\begin{table}[!htbp]
+\centering
+\caption{E1 --- median per-flow explanation cost on the QUIC-strict tier $T_3$ (one pinned core) for both datasets. Ratio = median explanation time / median detection time of the same detector; MB = peak memory increment (larger of the two datasets). Tail latencies and throughput are summarised in the text.}
+\label{tab:cost}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llrrrrr}
+\toprule
+\textbf{Model} & \textbf{Explainer} & \textbf{CIC ms} & \textbf{CIC ratio} & \textbf{HIKARI ms} & \textbf{HIKARI ratio} & \textbf{MB} \\
+\midrule
+LR & LinearSHAP & 0.006 & 0.1$\times$ & 0.006 & 0.1$\times$ & 0.0 \\
+ & LIME-1000 & 23.19 & 302.5$\times$ & 22.40 & 322.8$\times$ & 4.5 \\
+ & KernelSHAP-500 & 44.90 & 585.8$\times$ & 43.12 & 621.3$\times$ & 52.3 \\
+\midrule
+EBM & EBM-native & 0.33 & 0.8$\times$ & 0.30 & 0.8$\times$ & 0.3 \\
+ & KernelSHAP-500 & 30.41 & 70.0$\times$ & 29.01 & 79.7$\times$ & 28.0 \\
+\midrule
+XGB & TreeSHAP-path & 0.98 & 1.8$\times$ & 1.23 & 3.2$\times$ & 7.7 \\
+ & TreeSHAP-interv & 4.11 & 7.5$\times$ & 5.90 & 15.5$\times$ & 8.1 \\
+ & LIME-500 & 19.34 & 35.4$\times$ & 21.57 & 56.7$\times$ & 1.3 \\
+ & KernelSHAP-100 & 21.82 & 39.9$\times$ & 23.46 & 61.7$\times$ & 2.4 \\
+ & LIME-1000 & 30.62 & 56.0$\times$ & 29.15 & 76.6$\times$ & 3.8 \\
+ & LIME-5000 & 89.78 & 164.1$\times$ & 100.13 & 263.2$\times$ & 15.9 \\
+ & KernelSHAP-500 & 109.39 & 200.0$\times$ & 99.13 & 260.5$\times$ & 7.0 \\
+ & PartitionSHAP-500 & 174.06 & 318.2$\times$ & 176.59 & 464.1$\times$ & 1.2 \\
+ & KernelSHAP-2048 & 374.10 & 684.0$\times$ & 390.83 & 1027.2$\times$ & 52.8 \\
+\midrule
+RF & TreeSHAP-path & 9.77 & 2.3$\times$ & 39.61 & 11.1$\times$ & 16.8 \\
+ & TreeSHAP-interv & 13.62 & 3.2$\times$ & 37.40 & 10.5$\times$ & 20.0 \\
+ & LIME-500 & 25.26 & 5.9$\times$ & 25.85 & 7.3$\times$ & 2.4 \\
+ & KernelSHAP-100 & 33.20 & 7.7$\times$ & 35.37 & 9.9$\times$ & 1.9 \\
+ & LIME-1000 & 35.53 & 8.3$\times$ & 34.98 & 9.8$\times$ & 5.2 \\
+ & LIME-5000 & 106.73 & 24.9$\times$ & 102.59 & 28.8$\times$ & 18.2 \\
+ & KernelSHAP-500 & 114.72 & 26.7$\times$ & 127.17 & 35.7$\times$ & 7.4 \\
+ & KernelSHAP-2048 & 507.81 & 118.2$\times$ & 524.30 & 147.2$\times$ & 53.5 \\
+\midrule
+MLP & IG-16 & 1.13 & 14.9$\times$ & 1.03 & 17.2$\times$ & 5.3 \\
+ & DeepSHAP & 1.56 & 20.6$\times$ & 1.84 & 30.7$\times$ & 4.8 \\
+ & IG-32 & 1.62 & 21.3$\times$ & 1.64 & 27.3$\times$ & 5.5 \\
+ & IG-64 & 2.89 & 38.1$\times$ & 2.90 & 48.4$\times$ & 5.6 \\
+ & KernelSHAP-100 & 7.18 & 94.6$\times$ & 6.94 & 115.5$\times$ & 9.9 \\
+ & LIME-500 & 17.80 & 234.5$\times$ & 16.45 & 273.9$\times$ & 4.2 \\
+ & LIME-1000 & 23.27 & 306.5$\times$ & 22.52 & 375.1$\times$ & 7.5 \\
+ & KernelSHAP-500 & 24.97 & 329.0$\times$ & 23.52 & 391.7$\times$ & 38.1 \\
+ & LIME-5000 & 75.38 & 993.1$\times$ & 75.82 & 1262.6$\times$ & 23.9 \\
+ & KernelSHAP-2048 & 91.94 & 1211.4$\times$ & 89.76 & 1494.7$\times$ & 175.5 \\
+\bottomrule
+\end{tabular}
+\end{table}

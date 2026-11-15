@@ -1,0 +1,16 @@
+\begin{table}[!htbp]
+\centering
+\caption{Processed datasets: size, time-ordered splits, attack share of the test split, features per tier and attack families}
+\label{tab:data}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.9cm}rlrl>{\raggedright\arraybackslash}p{5.3cm}}
+\toprule
+\textbf{Dataset} & \textbf{Flows} & \textbf{Train / Val / Test} & \textbf{Attack} & \textbf{T1/T2/T3} & \textbf{Attack families (flows)} \\
+\midrule
+CIC-IDS2017 & 397,976 & 238,850 / 79,533 / 79,593 & 50.0\% & 84 / 79 / 59 & Reconnaissance 88,287, DoS 57,920, DDoS 44,753, BruteForce 7,006, Botnet 736, Infiltration 36, WebAttack 31, Heartbleed 11 \\
+HIKARI-2021 & 276,211 & 172,651 / 54,513 / 49,047 & 13.3\% & 81 / 79 / 60 & Reconnaissance 23,388, BruteForce 8,969, Cryptomining 3,105 \\
+CSE-CIC-IDS2018 & 398,953 & 239,386 / 79,782 / 79,785 & 50.0\% & 84 / 79 / 59 & DoS 72,802, DDoS 42,712, BruteForce 42,019, Botnet 41,892, WebAttack 152 \\
+\bottomrule
+\end{tabular}
+\end{table}

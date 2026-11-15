@@ -1,0 +1,31 @@
+\begin{table}[!htbp]
+\centering
+\caption{Ablations A8 (feature groups within T3), A10 (grouped vs independent attributions) and A11 (KernelSHAP background size)}
+\label{tab:ablextra}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lp{2.8cm}p{4.2cm}rrrrr}
+\toprule
+\textbf{Dataset} & \textbf{Ablation} & \textbf{Variant} & \textbf{F1} & \textbf{Faith.} & \textbf{AOPC$^+$} & \textbf{Max-sens.} & \textbf{ms} \\
+\midrule
+CIC-IDS2017 & A8 feature group & timing & 0.913 & 0.352 & 0.328 & 1.08 & 6.2 \\
+CIC-IDS2017 & A8 feature group & size & 0.668 & 0.370 & 0.134 & 3.76 & 3.7 \\
+CIC-IDS2017 & A8 feature group & volume\_direction & 0.767 & 0.266 & 0.160 & 1.15 & 6.5 \\
+CIC-IDS2017 & A8 feature group & all\_T3 & 0.984 & 0.495 & 0.272 & 1.28 & 4.4 \\
+CIC-IDS2017 & A11 background size & KernelSHAP-500, k=10 & -- & 0.361 & 0.234 & 1.09 & 26.3 \\
+CIC-IDS2017 & A11 background size & KernelSHAP-500, k=50 & -- & 0.513 & 0.249 & 1.26 & 94.2 \\
+CIC-IDS2017 & A11 background size & KernelSHAP-500, k=100 & -- & 0.501 & 0.272 & 1.32 & 173.8 \\
+CIC-IDS2017 & A10 grouped vs independent & independent KernelSHAP-500 & -- & 0.493 & 0.247 & 1.28 & 94.8 \\
+CIC-IDS2017 & A10 grouped vs independent & grouped PartitionSHAP-500 (Owen) & -- & 0.295 & 0.080 & 1.49 & 158.1 \\
+HIKARI-2021 & A8 feature group & timing & 0.248 & 0.055 & 0.043 & 1.06 & 7.2 \\
+HIKARI-2021 & A8 feature group & size & 0.114 & 0.137 & 0.040 & 1.04 & 6.1 \\
+HIKARI-2021 & A8 feature group & volume\_direction & 0.096 & -0.001 & -0.034 & 1.06 & 5.7 \\
+HIKARI-2021 & A8 feature group & all\_T3 & 0.262 & 0.267 & 0.189 & 1.07 & 5.8 \\
+HIKARI-2021 & A11 background size & KernelSHAP-500, k=10 & -- & 0.246 & 0.138 & 1.05 & 28.0 \\
+HIKARI-2021 & A11 background size & KernelSHAP-500, k=50 & -- & 0.247 & 0.112 & 1.05 & 93.0 \\
+HIKARI-2021 & A11 background size & KernelSHAP-500, k=100 & -- & 0.227 & 0.124 & 1.05 & 178.5 \\
+HIKARI-2021 & A10 grouped vs independent & independent KernelSHAP-500 & -- & 0.237 & 0.127 & 1.05 & 91.3 \\
+HIKARI-2021 & A10 grouped vs independent & grouped PartitionSHAP-500 (Owen) & -- & 0.296 & 0.126 & 1.07 & 160.2 \\
+\bottomrule
+\end{tabular}
+\end{table}

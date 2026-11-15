@@ -1,0 +1,52 @@
+% ══════════════════════════════════════════════════════════════════
+%  CS3001 Computer Networks --- Research Project, Phase 3
+%  Main file: compile this one (pdfLaTeX on Overleaf, two passes for
+%  references; or locally `tectonic -X compile Phase3_Report.tex`).
+%  Figures are read from ../figures, generated tables from generated/.
+% ══════════════════════════════════════════════════════════════════
+\input{preamble.tex}
+
+\begin{document}
+
+% ══════════════════════════════════════════════════════════════════
+%  TITLE BLOCK
+% ══════════════════════════════════════════════════════════════════
+\begin{center}
+  {\Large\bfseries National University of Computer \& Emerging Sciences}\\[6pt]
+  {\large\bfseries Research Project}\\[6pt]
+  {\Large\bfseries Phase 3: Research Implementation and Experimental Evaluation}\\[10pt]
+  {\itshape ``Evaluating the Fidelity and Computational Cost of Explainable AI for Encrypted Network Traffic Intrusion Detection''}\\[12pt]
+  {\bfseries Ahmed Raza, Huzaifa Mudassar}\\[2pt]
+  Department of AI \& DS\\
+  Roll Numbers: 24i-0026, 24i-0050
+\end{center}
+
+\vspace{8pt}
+
+\input{sec1_implementation.tex}
+\FloatBarrier
+\input{sec2_data.tex}
+\FloatBarrier
+\input{sec3_baselines.tex}
+
+% ══════════════════════════════════════════════════════════════════
+%  SECTION IV --- EXPERIMENTAL RESULTS
+% ══════════════════════════════════════════════════════════════════
+\FloatBarrier
+\section{Experimental Results}
+\label{sec:results}
+This section answers the four research questions, one experiment each (E1--E4).
+
+\input{sec4a_cost.tex}
+\input{sec4b_fidelity.tex}
+\input{sec4c_drift.tex}
+\input{sec4d_stream.tex}
+
+\input{sec5_comparison.tex}
+\input{sec6_ablation.tex}
+\input{sec7_discussion.tex}
+
+\FloatBarrier
+\input{references.tex}
+
+\end{document}

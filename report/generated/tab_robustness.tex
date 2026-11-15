@@ -1,0 +1,21 @@
+\begin{table}[!htbp]
+\centering
+\caption{Robustness on T3: each test flow's timing features are scaled by $U(1-a, 1+a)$ (jitter) or its size features by $U(1, 1+a)$ (padding); thresholds stay fixed. J@5 compares explanations of the same 200 flows before and after perturbation (XGBoost: interventional TreeSHAP; MLP: IG-32).}
+\label{tab:robust}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lllrrrrrrrrr}
+\toprule
+\textbf{Dataset} & \textbf{Model} & \textbf{Perturbation} & \textbf{F1 $a$=0} & \textbf{0.05} & \textbf{0.25} & \textbf{0.5} & \textbf{FPR $a$=0} & \textbf{0.5} & \textbf{J@5 0.05} & \textbf{0.25} & \textbf{0.5} \\
+\midrule
+CIC-IDS2017 & XGB & timing jitter & 0.982 & 0.982 & 0.982 & 0.981 & 0.0067 & 0.0080 & 0.97 & 0.95 & 0.91 \\
+CIC-IDS2017 & XGB & size padding & 0.982 & 0.981 & 0.982 & 0.984 & 0.0067 & 0.0087 & 0.97 & 0.90 & 0.85 \\
+CIC-IDS2017 & MLP & timing jitter & 0.961 & 0.961 & 0.962 & 0.962 & 0.0056 & 0.0056 & 0.99 & 0.95 & 0.90 \\
+CIC-IDS2017 & MLP & size padding & 0.961 & 0.962 & 0.966 & 0.970 & 0.0056 & 0.0054 & 0.98 & 0.94 & 0.91 \\
+HIKARI-2021 & XGB & timing jitter & 0.262 & 0.256 & 0.224 & 0.188 & 0.0258 & 0.0164 & 0.96 & 0.92 & 0.89 \\
+HIKARI-2021 & XGB & size padding & 0.262 & 0.078 & 0.070 & 0.050 & 0.0258 & 0.0038 & 0.88 & 0.86 & 0.83 \\
+HIKARI-2021 & MLP & timing jitter & 0.159 & 0.156 & 0.160 & 0.186 & 0.0126 & 0.0172 & 0.99 & 0.95 & 0.88 \\
+HIKARI-2021 & MLP & size padding & 0.159 & 0.170 & 0.204 & 0.264 & 0.0126 & 0.0250 & 0.99 & 0.95 & 0.91 \\
+\bottomrule
+\end{tabular}
+\end{table}

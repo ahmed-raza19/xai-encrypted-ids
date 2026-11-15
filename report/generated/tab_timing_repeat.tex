@@ -1,0 +1,21 @@
+\begin{table}[!htbp]
+\centering
+\caption{Timing repeatability: three fresh-process repetitions per configuration}
+\label{tab:timingrep}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llllrrr}
+\toprule
+\textbf{Dataset} & \textbf{Tier} & \textbf{Model} & \textbf{Explainer} & \textbf{mean ms} & \textbf{sd ms} & \textbf{CV} \\
+\midrule
+CIC-IDS2017 & T3 & MLP & DeepSHAP & 1.53 & 0.12 & 8.2\% \\
+CIC-IDS2017 & T3 & MLP & IG-32 & 1.56 & 0.02 & 1.1\% \\
+CIC-IDS2017 & T3 & XGB & KernelSHAP-500 & 101.88 & 0.97 & 1.0\% \\
+CIC-IDS2017 & T3 & XGB & LIME-1000 & 27.83 & 1.91 & 6.9\% \\
+CIC-IDS2017 & T3 & XGB & TreeSHAP-interv & 4.73 & 0.64 & 13.5\% \\
+CIC-IDS2017 & T3 & XGB & TreeSHAP-path & 0.91 & 0.05 & 5.9\% \\
+HIKARI-2021 & T3 & RF & KernelSHAP-500 & 101.32 & 2.96 & 2.9\% \\
+HIKARI-2021 & T3 & XGB & TreeSHAP-interv & 5.87 & 0.21 & 3.6\% \\
+\bottomrule
+\end{tabular}
+\end{table}

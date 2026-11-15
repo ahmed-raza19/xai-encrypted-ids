@@ -1,0 +1,30 @@
+\begin{table}[!htbp]
+\centering
+\caption{E4 --- explanation policies at 75\% offered load on CIC-IDS2017 (XGB, T3). $O_{\mathrm{sync}}$ = all synchronous XAI work (trigger, cache, explanation) relative to detection time; Cov.\,sync = true alerts with an exact local explanation on the detection path within 1\,s; +def.\ adds the deferred lane; deep = escalations served within 30\,s.}
+\label{tab:stream:cic2017_XGB_T3}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+\textbf{Traffic} & \textbf{Policy} & \textbf{Expl.\,rate} & \textbf{$O_{\mathrm{sync}}$} & \textbf{$O_{\mathrm{async}}$} & \textbf{Cov.\,sync} & \textbf{+def.} & \textbf{Deep} & \textbf{p99 ms} & \textbf{Cache} \\
+\midrule
+mixed & B1 Explain-none & 0.000 & 0.004 & 0.00 & 0.000 & 0.000 & -- & 3.2 & 0.00 \\
+ & B2a Explain-all (fast) & 1.000 & 2.144 & 0.00 & 0.059 & 0.059 & -- & 16723.5 & 0.00 \\
+ & B2b Explain-all (deep) & 1.000 & 257.674 & 0.00 & 0.000 & 0.000 & -- & 2117018.9 & 0.00 \\
+ & B3 Static global & 0.054 & 0.004 & 0.00 & 0.000 & 0.000 & -- & 58.0 & 0.00 \\
+ & B4 Random (matched rate) & 0.156 & 0.371 & 0.00 & 0.165 & 0.165 & -- & 242.7 & 0.00 \\
+ & B5 Alert-only & 0.054 & 0.131 & 0.00 & 1.000 & 1.000 & -- & 8.3 & 0.00 \\
+ & B6 Amortised (all flows) & 1.000 & 0.288 & 0.00 & 0.746 & 0.746 & -- & 1443.7 & 0.00 \\
+ & Proposed & 0.157 & 0.106 & 5.00 & 0.566 & 1.000 & 0.243 & 31.9 & 0.28 \\
+\midrule
+burst & B1 Explain-none & 0.000 & 0.004 & 0.00 & 0.000 & 0.000 & -- & 6.3 & 0.00 \\
+ & B2a Explain-all (fast) & 1.000 & 2.152 & 0.00 & 0.015 & 0.015 & -- & 18682.7 & 0.00 \\
+ & B2b Explain-all (deep) & 1.000 & 242.336 & 0.00 & 0.000 & 0.000 & -- & 2435233.2 & 0.00 \\
+ & B3 Static global & 0.177 & 0.004 & 0.00 & 0.000 & 0.000 & -- & 3.9 & 0.00 \\
+ & B4 Random (matched rate) & 0.267 & 0.604 & 0.00 & 0.029 & 0.029 & -- & 2580.6 & 0.00 \\
+ & B5 Alert-only & 0.177 & 0.418 & 0.00 & 0.413 & 0.413 & -- & 2676.1 & 0.00 \\
+ & B6 Amortised (all flows) & 1.000 & 0.289 & 0.00 & 1.000 & 1.000 & -- & 670.5 & 0.00 \\
+ & Proposed & 0.267 & 0.105 & 4.42 & 0.883 & 1.000 & 0.260 & 34.5 & 0.61 \\
+\bottomrule
+\end{tabular}
+\end{table}

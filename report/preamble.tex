@@ -1,0 +1,96 @@
+% ══════════════════════════════════════════════════════════════════
+%  CS3001 Computer Networks --- Research Project, Phase 3
+%  Research Implementation and Experimental Evaluation
+%  Compiles with pdfLaTeX (Overleaf default) or XeLaTeX.
+% ══════════════════════════════════════════════════════════════════
+\documentclass[11pt,a4paper]{article}
+
+% ── page layout ──
+\usepackage[a4paper,top=2.3cm,bottom=2.3cm,left=2.1cm,right=2.1cm,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ── mathematics and symbols ──
+\usepackage{amsmath,amssymb}
+\usepackage{pifont}
+
+% ── tables ──
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xltabular}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{float}
+\usepackage{needspace}
+\usepackage{multicol}
+\usepackage{placeins}          % \FloatBarrier keeps floats inside their section
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.6}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.75}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\makeatletter
+\setlength{\@fptop}{0pt}            % float-only pages start at the top
+\makeatother
+
+% ── figures and diagrams ──
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,fit,backgrounds,calc}
+
+% ── algorithms ──
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ── formatting ──
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[font=small,labelfont=bf,skip=4pt]{caption}
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
+
+% ── section numbering in IEEE style (I, II, ... / A, B, ...) ──
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+% ── header and footer (consistent with the Phase 1 report) ──
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Phase 3:} Research Implementation \& Experimental Evaluation}
+\fancyhead[R]{\small CS3001 -- Computer Networks}
+\fancyfoot[L]{\small A.~Raza, H.~Mudassar}
+\fancyfoot[R]{\small Page \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}%
+  \fancyhead[L]{\small\textbf{Phase 3:} Research Implementation \& Experimental Evaluation}%
+  \fancyhead[R]{\small CS3001 -- Computer Networks}%
+  \fancyfoot[L]{\small A.~Raza, H.~Mudassar}%
+  \fancyfoot[R]{\small Page \thepage}}
+
+% ── table helpers ──
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Z}[1]{>{\raggedright\arraybackslash\hsize=#1\hsize}X}
+\newcommand{\yes}{\ding{51}}
+\newcommand{\no}{\ding{55}}
+\newcommand{\partl}{$\circ$}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\emergencystretch}{2em}
+\setlength{\LTpre}{6pt}
+\setlength{\LTpost}{6pt}
+
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}

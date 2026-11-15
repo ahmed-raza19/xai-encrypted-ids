@@ -1,0 +1,66 @@
+% ══════════════════════════════════════════════════════════════════
+%  SECTION VII --- RESULTS ANALYSIS AND DISCUSSION
+% ══════════════════════════════════════════════════════════════════
+\section{Results Analysis and Discussion}
+\label{sec:discussion}
+
+\subsection{Hypotheses}
+\begin{table}[H]
+\centering
+\caption{Verdicts on the Phase 2 hypotheses}
+\label{tab:verdicts}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.3cm} Y >{\raggedright\arraybackslash}p{2.4cm}}
+\toprule
+\textbf{Hypothesis} & \textbf{Evidence} & \textbf{Verdict} \\
+\midrule
+H1: slow explainers make each flow at least 100$\times$ slower & True for 25 of 44 slow settings (up to 1{,}500$\times$); not on the slow Random Forest or with small budgets; fast explainers add only 1.1--49$\times$ & Partly supported \\
+H2: explanation quality falls under encryption & CIC-IDS2017: quality \emph{rises} for 7 of 8 pairs; HIKARI: 3 worse, 1 better, 4 unchanged & Rejected on CIC-IDS2017; mixed on HIKARI \\
+H3: explanations change across networks, in step with accuracy loss & Below the noise levels in 12 of 16 cases; drift follows the recall drop ($\rho=0.63$) & Supported \\
+H4: the trigger keeps overhead $\le$ 10\%, explains $\ge$ 95\% of alerts in time, with no loss of quality & Overhead 0.101--0.106, 100\% of alerts explained within 1\,s, quality equivalent to fresh explanations & Supported within detection capacity \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Main findings}
+\begin{enumerate}[leftmargin=*, itemsep=0pt]
+  \item \textbf{Cost depends on the explainer--detector pair, not on ``XAI'' in general.} Fast model-specific explainers cost about as much as detection and are also the most faithful. XGBoost with TreeSHAP, or an EBM, detects and explains a flow for 1.8--4.2 times the cost of detection alone. KernelSHAP and LIME belong only on a background lane.
+  \item \textbf{Encryption removes artefacts, not explainability.} On CIC-IDS2017 the $T_3$ view loses at most 1.5 F1 points, gives more faithful explanations, and produces fewer false positives after a network change.
+  \item \textbf{The choice of explainer changes the story.} Explainers share only about 2 of their top-5 features, so a security team should fix one explainer and measure its quality on its own traffic.
+  \item \textbf{Explanation drift is a free early warning} of a network change.
+  \item \textbf{Selective explanation helps most at the edges:} during floods (cache), under overload (pausing) and for missed attacks (uncertainty rule).
+  \item \textbf{Padding is a cheap way to evade} a metadata-based detector, so it should be tested.
+\end{enumerate}
+
+\subsection{Research gaps}
+Gaps G1--G3 were found in Phase~1 and G4 was added in Phase~2. Table~\ref{tab:gapmap} maps each gap to what this phase shows and what remains open.
+
+\begin{table}[!htbp]
+\centering
+\caption{Research gaps of Phase 2: what Phase 3 shows and what remains open}
+\label{tab:gapmap}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.2cm} Y >{\raggedright\arraybackslash}p{3.8cm}}
+\toprule
+\textbf{Gap} & \textbf{What Phase 3 shows} & \textbf{Still open} \\
+\midrule
+G1: explanation cost not measured & Time and memory of every explainer on one core; published costs include explainer building (Sections~\ref{sec:rq1}, \ref{sec:compare}) & Edge devices; GPU batching \\
+G2: quality under encryption unknown & Quality of nine explainers on three visibility tiers, with paired tests (Section~\ref{sec:rq2}) & Real QUIC captures; packet-sequence models \\
+G3: consistency under network change & Drift beyond the noise levels, linked to accuracy loss (Section~\ref{sec:rq3}) & Other shifts (DoH tunnel tools); drift-triggered retraining \\
+G4: no budget-aware explanation policy & A trigger tested against seven baselines and fifteen ablation variants (Sections~\ref{sec:rq4}, \ref{sec:ablation}) & Adaptive budgets; a study with real analysts \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Strengths and limitations}
+\textbf{Strengths.} Cost, quality and drift are measured on the same explanations of the same flows; the data are leakage-controlled with time-based splits; the encryption assumption is tested on real packets; the explainers are checked against a known answer; every comparison uses paired statistical tests with effect sizes; and every result can be regenerated from the code.
+
+\textbf{Limitations.}
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+  \item The QUIC view is emulated by removing columns from flow datasets, not measured on real QUIC traffic, and the only truly encrypted dataset (HIKARI) has weak detectors.
+  \item All timings come from one laptop, with 200 flows per setting and one seed.
+  \item Removal-based quality metrics depend on the value that replaces a removed feature; two different replacement values and a known-answer test (Section~\ref{sec:abl:sanity}) gave the same explainer ranking.
+  \item Many statistical tests were run, so all of them are Holm-corrected.
+\end{itemize}

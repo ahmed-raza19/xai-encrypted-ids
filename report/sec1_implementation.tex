@@ -1,0 +1,38 @@
+% ══════════════════════════════════════════════════════════════════
+%  SECTION I --- IMPLEMENTATION OF THE PROPOSED METHODOLOGY
+% ══════════════════════════════════════════════════════════════════
+\section{Implementation of the Proposed Methodology}
+\label{sec:impl}
+
+\subsection{What was built}
+The Phase~2 methodology was implemented in Python as one package (\texttt{xaiids}) and eleven numbered scripts, one per methodology step. The code and the commands that reproduce every result are in \texttt{Iteration\_3/code} (see its README). It contains:
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+  \item \textbf{Five detectors:} Logistic Regression (LR), Random Forest (RF), XGBoost~\cite{chen2016}, a neural network (MLP) and the explainable-by-design EBM~\cite{nori2019}.
+  \item \textbf{Nine explainers:} TreeSHAP (two variants)~\cite{lundberg2020}, KernelSHAP~\cite{lundberg2017}, LIME~\cite{ribeiro2016}, Integrated Gradients (IG)~\cite{sundararajan2017}, DeepSHAP~\cite{shrikumar2017}, linear SHAP, the EBM's built-in explanations and PartitionSHAP, plus a learned fast explainer~\cite{fastshap} used as a baseline.
+  \item \textbf{Metrics and tests:} faithfulness~\cite{bhatt2020}, deletion AOPC~\cite{samek2017}, infidelity and sensitivity~\cite{yeh2019}, top-5 agreement between explainers (Jaccard@5), and paired statistical tests with Holm correction~\cite{demsar2006}.
+  \item \textbf{The selective explanation trigger} and a traffic replay simulator (Section~\ref{sec:trigger}).
+\end{itemize}
+All experiments run on one laptop (Intel Core i5-1245U, 16\,GB RAM, no GPU) with Python~3.12.7, scikit-learn~1.9, XGBoost~3.4, PyTorch~2.15 (CPU), SHAP~0.54, Captum~0.9, InterpretML~0.7.8 and NFStream~6.6.0. Every timing uses a single CPU core, so all costs in this report are per-core costs.
+
+\subsection{Feedback and changes from Phase 2}
+No feedback was received on Phase~2, so the design was followed. Running it on real data required these changes:
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+  \item \textbf{Data:} published flow records instead of raw packet captures, because the CIC captures need more than our 34\,GB of free disk. The packet-level step is checked separately on HIKARI captures (Section~\ref{sec:pcap}).
+  \item \textbf{Datasets:} CESNET-QUIC22 and our own testbed were dropped for time and disk, and DoHBrw-2020 (registration form) is left for later. The QUIC view is emulated by tier $T_3$.
+  \item \textbf{Neural detector:} an MLP instead of the 1D-CNN, because flow records have no packet-by-packet sequence; ablation A9 is dropped for the same reason.
+  \item \textbf{Replay:} a simulator with real computation instead of live \texttt{tcpreplay}, so every run is repeatable.
+  \item \textbf{Cost test (E1):} 200 flows and one seed instead of 1{,}000 flows and five seeds, which would take days; repeated runs differ by only a few percent (Section~\ref{sec:ablation}).
+  \item \textbf{Trigger budget:} the budget now pays for \emph{all} explanation work, holds 50\,ms instead of 2\,s, and pauses explanation when detection falls behind, because the first full run went over budget.
+  \item \textbf{Smaller changes:} time-based split within each attack family, no probability calibration (it changes no decision), one pinned CPU core instead of a Docker container, and metrics written from their original definitions instead of the Quantus toolkit.
+\end{itemize}
+
+\subsection{The selective explanation trigger}
+\label{sec:trigger}
+For every flow the detector gives a score $p$. The trigger asks for an explanation when one of four rules fires:
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+  \item \emph{Alert:} $p$ is above the alert threshold $\tau$ (set for 1\% false positives on validation data).
+  \item \emph{Uncertain:} $p$ is close to $\tau$ (a band holding 5\% of validation flows). This is how missed attacks get explained.
+  \item \emph{Unusual:} the flow is far from the training data (Mahalanobis distance~\cite{ledoit2004} above the 99th percentile).
+  \item \emph{Audit:} a random 0.5\% of benign verdicts.
+\end{itemize}
+A requested explanation then goes through three steps. \textbf{(1) Cache:} if a very similar flow was explained in the last 60\,s, that explanation is reused. \textbf{(2) Budget:} otherwise a fast exact explanation (TreeSHAP, or IG for the MLP) is computed at once, but only if the budget allows. The budget is a token bucket that earns 10\% of each flow's detection time ($\beta=0.10$) and pays for all explanation work; when it is empty, a quick class-level explanation is shown and the exact one is computed on a background lane. \textbf{(3) Deep lane:} high-confidence alerts and uncertain flows also get a slower KernelSHAP explanation on a second background lane, which drops jobs that cannot finish within 30\,s. When detection falls more than 100\,ms behind, all explanation work except cache hits pauses, so explaining never makes an overload worse. By design, the explanation overhead stays at $\beta$ plus a small burst allowance.
