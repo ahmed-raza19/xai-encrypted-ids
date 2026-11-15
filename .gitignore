@@ -1,0 +1,13 @@
+# Large or machine-specific files that are not shared
+.venv/
+data/
+results/models/
+__pycache__/
+*.pyc
+*.log
+*_log*.txt
+# LaTeX build files
+*.aux
+*.xdv
+*.out
+*.toc
